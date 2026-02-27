@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Wall</title>
+    <!--<link rel="icon" href="icon.svg" />-->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="lib/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="lib/syncfusion/ej2/bootstrap5.3.css" rel="stylesheet" />
+    <style>
+        .e-listview:not(.e-list-template) .e-list-item {
+            height: auto;
+            line-height: 18px;
+            position: relative;
+            padding: 7px 9px 7px 12px
+        }
+    </style>
+    <script src="lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="lib/string-format/index.js" type="text/javascript"></script>
+    <script src="lib/liquidjs/dist/liquid.browser.min.js" type="text/javascript"></script>
+    <script src="lib/syncfusion/ej2/dist/ej2.min.js"></script>
+    <script src="app.js"></script>
+    <script id="list-item-text" type="text/template">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex">
+                        <h6 class="mt-1"><small class="text-muted">{{created}}</small> {{user}}</h6>
+                        <div class="d-flex ms-auto">
+                            <a href="{{base64content}}" download="{{title}}" target="_blank">{{title}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <pre class="card-text">{{formatcontent}}</pre>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="list-item-image" type="text/template">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex">
+                        <h6 class="mt-1"><small class="text-muted">{{created}}</small> {{user}}</h6>
+                        <div class="d-flex ms-auto">
+                            <a href="{{base64content}}" download="{{title}}" target="_blank">{{title}}</a>
+                        </div>
+                    </div>
+                </div>
+                <img class="card-img-bottom" src="{{base64content}}">
+            </div>
+        </div>
+    </script>
+    <script id="list-item-file" type="text/template">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="d-flex">
+                        <h6 class="mt-1"><small class="text-muted">{{created}}</small> {{user}}</h6>
+                        <div class="d-flex ms-auto">
+                            <a href="{{base64content}}" download="{{title}}" target="_blank">{{title}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <a href="api/messages/{{group}}/{{id}}" target="_blank">{{title}}</a>
+                </div>
+            </div>
+        </div>
+    </script>
+</head>
+<body style="padding-top:100px;padding-bottom:200px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="list-group height" id="groups"></div>
+            </div>
+            <div class="col-12">
+                <div class="row mt-1">
+                    <div class="col-12">
+                        <div class="row" id="list"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="fixed-bottom" style="background-color:#eee; padding-top: 10px; padding-bottom: 20px;">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row mt-1">
+                            <div class="col-12">
+                                <ul class="nav nav-pills nav-fill" role="tablist" id="pills-tab">
+                                    <li class="nav-item" role="presentation">
+                                        <button type="button" role="tab" data-bs-toggle="pill" aria-selected="true" class="nav-link active" id="pills-text-tab" data-bs-target="#pills-text" aria-controls="pills-text">Text</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button type="button" role="tab" data-bs-toggle="pill" aria-selected="false" class="nav-link" id="pills-file-tab" data-bs-target="#pills-file" aria-controls="pills-file">File</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row mt-1" id="panel-text">
+                            <div class="col-12 input-group">
+                                <button type="button" id="send" class="btn btn-light" style="width:90px; border-color:#dee2e6;">SEND</button>
+                                <textarea id="text-input" rows="1" class="form-control" style=""></textarea>
+                            </div>
+                        </div>
+                        <div class="row mt-1" id="panel-file" style="display: none;">
+                            <div class="col-12">
+                                <input type="file" id="file-input" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

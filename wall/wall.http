@@ -1,0 +1,6 @@
+@wall_HostAddress = http://localhost:5045
+
+GET {{wall_HostAddress}}/api/messages/
+Accept: application/json
+
+###

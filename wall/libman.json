@@ -1,0 +1,65 @@
+{
+  "version": "3.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "library": "@microsoft/signalr@10.0.0",
+      "destination": "wwwroot/lib/microsoft/signalr/",
+      "files": [
+        "dist/browser/signalr.min.js",
+        "dist/browser/signalr.min.js.map"
+      ]
+    },
+    {
+      "library": "jquery@3.7.1",
+      "destination": "wwwroot/lib/jquery/",
+      "files": [
+        "dist/jquery.min.js",
+        "dist/jquery.min.map"
+      ]
+    },
+    {
+      "library": "bootstrap@5.3.8",
+      "destination": "wwwroot/lib/bootstrap/",
+      "files": [
+        "dist/js/bootstrap.bundle.min.js",
+        "dist/js/bootstrap.bundle.min.js.map",
+        "dist/css/bootstrap.min.css",
+        "dist/css/bootstrap.min.css.map"
+      ]
+    },
+    {
+      "library": "bootstrap-icons@1.9.0",
+      "destination": "wwwroot/lib/bootstrap-icons/",
+      "files": [
+        "font/fonts/bootstrap-icons.woff",
+        "font/fonts/bootstrap-icons.woff2",
+        "font/bootstrap-icons.css",
+        "font/index.html"
+      ]
+    },
+    {
+      "library": "string-format@2.0.0",
+      "destination": "wwwroot/lib/string-format/",
+      "files": [
+        "index.js"
+      ]
+    },
+    {
+      "library": "liquidjs@10.24.0",
+      "destination": "wwwroot/lib/liquidjs/",
+      "files": [
+        "dist/liquid.browser.min.js",
+        "dist/liquid.browser.min.js.map"
+      ]
+    },
+    {
+      "library": "@syncfusion/ej2@32.1.21",
+      "destination": "wwwroot/lib/syncfusion/ej2/",
+      "files": [
+        "dist/ej2.min.js",
+        "bootstrap5.3.css"
+      ]
+    }
+  ]
+}
