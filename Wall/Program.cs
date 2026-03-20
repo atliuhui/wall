@@ -1,4 +1,4 @@
-using MessageWall.Services;
+using Wall.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 

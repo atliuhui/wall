@@ -4,7 +4,7 @@ using System.IO.Hashing;
 using System.Text;
 using System.Text.Json;
 
-namespace MessageWall.Services
+namespace Wall.Services
 {
     public class StorageManager
     {

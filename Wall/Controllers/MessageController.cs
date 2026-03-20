@@ -1,8 +1,8 @@
-using MessageWall.Services;
+using Wall.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 
-namespace MessageWall.Controllers
+namespace Wall.Controllers
 {
     [ApiController]
     [Route("api/messages")]
